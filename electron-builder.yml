@@ -1,0 +1,17 @@
+appId: com.clipboard-app.history
+productName: 历史粘贴板
+directories:
+  output: release
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: assets/icon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+files:
+  - app/**/*
+  - package.json
+asar: false

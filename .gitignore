@@ -1,0 +1,6 @@
+﻿node_modules/
+release/
+*.log
+*.ps1
+test-screenshot.png
+final-screenshot.png

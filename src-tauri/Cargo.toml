@@ -1,0 +1,30 @@
+[package]
+name = "clipboard-app"
+version = "1.1.2"
+edition = "2021"
+
+[lib]
+name = "clipboard_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+image = "0.25"
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-shell = "2"
+tauri-plugin-global-shortcut = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+arboard = "3"
+base64 = "0.22"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+dirs = "5"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = "s"
+strip = true

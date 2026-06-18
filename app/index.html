@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历史粘贴板</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <div class="header">
+    <div class="header-left">
+      <h1>历史粘贴板</h1>
+      <span class="count" id="count">0</span>
+    </div>
+    <div class="btns">
+      <button id="btnSettings" title="设置">&#9881;</button>
+      <button id="btnHide" title="隐藏">&#8212;</button>
+      <button id="btnClose" title="关闭">&#10005;</button>
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <div class="search-wrapper">
+      <span class="search-icon">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </span>
+      <input type="text" id="searchInput" placeholder="搜索">
+    </div>
+  </div>
+
+  <div class="settings-panel" id="settingsPanel">
+    <div class="row">
+      <span class="label">存储期限</span>
+      <div class="segmented" id="retentionOpts"></div>
+    </div>
+    <div class="row">
+      <span class="label">主题</span>
+      <div class="segmented" id="themeOpts"></div>
+    </div>
+    <div class="row">
+      <span class="label">开机自启</span>
+      <div class="toggle" id="autoLaunchToggle"></div>
+    </div>
+    <div class="row">
+      <span class="label">删除全部记录</span>
+      <button class="danger-btn" id="btnDeleteAll">删除全部</button>
+    </div>
+  </div>
+
+  <div class="shortcut-hint" id="shortcutHint" title="点击隐藏">
+    <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd>
+  </div>
+
+  <div class="list" id="list"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="overlay" id="overlay">
+  <img id="overlayImg" src="" style="display:none">
+  <div class="spinner" id="overlaySpinner"></div>
+  <button class="close-btn" id="overlayClose">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="overlay-actions">
+    <button class="overlay-copy-btn" id="overlayCopyBtn">复制</button>
+    <button class="overlay-close-btn" id="overlayCloseBtn">关闭</button>
+  </div>
+</div>
+
+<script src="renderer.js"></script>
+</body>
+</html>

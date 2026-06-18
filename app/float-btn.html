@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  width:44px;height:44px;overflow:hidden;
+  background:transparent;-webkit-app-region:drag;
+  cursor:pointer;
+}
+.btn{
+  width:36px;height:36px;margin:4px;
+  border-radius:50%;border:none;
+  background:rgba(0,122,255,0.75);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  color:#fff;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,0.15);
+  transition:all .2s;
+  -webkit-app-region:no-drag;
+}
+.btn:hover{background:rgba(0,122,255,0.95);transform:scale(1.1)}
+.btn:active{transform:scale(0.95)}
+</style>
+</head>
+<body>
+<button class="btn" id="btn" title="历史粘贴板 (Alt+Shift+V)">&#128203;</button>
+<script>
+document.getElementById("btn").addEventListener("click", function(){
+  window.floatApi.onClick();
+});
+</script>
+</body>
+</html>

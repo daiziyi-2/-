@@ -1,0 +1,46 @@
+{
+  "productName": "历史粘贴板",
+  "version": "1.1.2",
+  "identifier": "com.clipboard-app.history",
+  "build": {
+    "frontendDist": "../app",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "",
+    "beforeBuildCommand": ""
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "历史粘贴板",
+        "width": 420,
+        "height": 640,
+        "minWidth": 320,
+        "minHeight": 400,
+        "decorations": false,
+        "visible": true,
+        "devtools": false
+      }
+    ],
+    "trayIcon": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": false,
+      "tooltip": "历史粘贴板"
+    },
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "nsis",
+    "icon": [
+      "icons/icon.ico"
+    ]
+  },
+  "plugins": {
+    "shell": {
+      "open": true
+    }
+  }
+}
